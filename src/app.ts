@@ -23,7 +23,7 @@ app.get("/", async (req: Request, res: Response) => {
   sendResponse(res, {
     success: true,
     message: "Running the Pc Builder server",
-    statusCode: 201,
+    statusCode: 200,
     data: null,
   });
 });

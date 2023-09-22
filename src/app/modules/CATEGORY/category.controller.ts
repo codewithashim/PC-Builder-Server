@@ -6,12 +6,7 @@ import { Category } from './category.model';
 
 export const getALLCategory = catchAsync(
   async (req: Request, res: Response) => {
-
-
     const data = await Category.find({});
-    // console.log(data,"cccccccc");
-
-
 
     sendResponse(res, {
       success: true,

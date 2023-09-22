@@ -6,7 +6,6 @@ const CategorySchema = new Schema<ICategory>(
     category: { type: String, required: true },
     imageSrc: { type: String, required: true },
   },
-
   {
     timestamps: true,
     toJSON: {

@@ -6,10 +6,10 @@ import { PC } from './pc.model';
 import { IPC } from './pc.interface';
 
 const createPC = catchAsync(async (req: Request, res: Response) => {
-  const { ...PC } = req.body;
-  // console.log(PC, 'from controller=================');
 
-  const result = await PCService.createPCServices(PC);
+  const data = req.body;
+
+  const result = await PCService.createPCServices(data);
   if (result) {
     sendResponse(res, {
       success: true,
@@ -17,12 +17,11 @@ const createPC = catchAsync(async (req: Request, res: Response) => {
       statusCode: 200,
       data: result,
     });
-    // next()
   }
 });
 
 const getALLPC = catchAsync(async (req: Request, res: Response) => {
-  const data = await PC.find({});
+  const data = await PC.find();
   sendResponse(res, {
     success: true,
     message: 'successfully get PCs',
